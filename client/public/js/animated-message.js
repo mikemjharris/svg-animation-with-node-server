@@ -31,9 +31,10 @@ var alphabet = {
   a: a, b: b, c: c, d: d, e: e, f:f, g: g, h: h, i: i, j: j, k: k, l: l, m: m, n: n, o: o, p: p, q: q, r: r, s: s, t: t, u: u, v: v, w: w, x: x, y: y, z: z, space: space
 };
 
+var words =["An", "anchor", "element", "is", "called", "an", "anchor", "because", "web", "designers", "can", "use", "it", "to", "anchor", "a", "URL", "to", "some", "text", "on", "a", "web", "page.", "When", "users", "view", "the", "web", "page", "in", "a", "browser,", "they", "can", "click", "the", "text", "to", "activate", "the", "link", "and", "visit", "the", "page", "whose", "URL", "is", "in", "the", "link."]
 
 var letters = [a,a,b,b,c,c,d,d,e,e,f,f,g,g,h,h,i,i,j,j,k,k,l,l,m,m,n,n,o,o,p,p,q,q,r,r,s,s,t,t,u,u,v,v,w,w,x,x,y,y,z,z];
-
+var randomSpeed = false;
 
 function codeAString ( words ) {
   var result = "";
@@ -74,7 +75,13 @@ function createAnimate ( letters ) {
     return createPath(letter);
   });
   result.push(result[0]);
-  return '<animate dur="' + letters.length / 2 + 's" repeatCount="indefinite" attributeName="d" values="' + result.join(';') +  '"/>';
+  
+  var speed = letters.length / 2 
+
+  if (randomSpeed) {
+    speed = speed * ( Math.random()*3 + 0.5 )  
+  }
+  return '<animate dur="' + speed + 's" repeatCount="indefinite" attributeName="d" values="' + result.join(';') +  '"/>';
 }
 
 
@@ -141,7 +148,6 @@ function createMeassgeFromString( message ) {
   }
   messageLetters.push(alphabet.space);
   messageLetters.push(alphabet.space);
-  $('#svgcontainer').empty();
 
   var color = Math.random()*360;
 
@@ -165,7 +171,13 @@ function init () {
     $('body').addClass('message');
     $('#share').attr('href', 'https://twitter.com/intent/tweet?&text=My animated message ' + window.location.href.replace('%20','\%20'));
   } else {
-    createSvg(letters, '#ebebeb');
+    $('#svgcontainer').empty();
+    randomSpeed = true;
+    words.forEach(function( word ) {
+      createMeassgeFromString(word)
+      // createSvg(letters, '#ebebeb');  
+    })
+    
   }
 }
 

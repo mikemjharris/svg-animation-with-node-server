@@ -3,7 +3,7 @@
 <head>
   <title>SVG Alphabet</title>
   <link rel="icon"
-      href="IMG/ani_favicon.png">
+      href="public/images/ani_favicon.png">
 
   <link rel="stylesheet" type="text/css" href="public/css/animated-message.css">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -32,20 +32,22 @@
    <div class='create-message'>
     <form method='get'>
       <input type="text" id="message" name='message' placeholder="Enter Your message"><br>
-      <input type="submit" value='Animate your message'>
+      <input type="submit" value='Create your own animated message'>
     </form>
+    <p>Previous messages:</p>
   </div>
+
 </div>
 
   <div id="svgcontainer">
   </div>
 
   <div class='read-message'>
-    <a href="https://twitter.com/intent/tweet?&text=My animated message http://sirrahmh.co.uk/alphabet" id='share' target="_blank">Share your message</a>
-    <a href="http://www.sirrahmj.co.uk/animated-message.html" id='create'>Create a message</a>
+    <a href="https://twitter.com/intent/tweet?&text=My animated message http://sirrahmh.co.uk/alphabet" id='share' target="_blank">Share this message</a>
+    <a href="../" id='create'>Create a message</a>
   </div>
 
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="vendor/bower/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="public/js/animated-message.js"></script>
 
 </body>
