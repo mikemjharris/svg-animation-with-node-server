@@ -1,0 +1,23 @@
+{
+  "name": "animate-message",
+  "version": "0.0.0",
+  "authors": [
+    "Mike Harris <mike.harris@mammal.io>"
+  ],
+  "description": "animate message",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "svg"
+  ],
+  "license": "MIT",
+  "homepage": "www.sirrahmj.co.uk",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
