@@ -1,5 +1,13 @@
 [
   {
+    "handle": "couch",
+    "spawn": {
+      "args": [],
+      "command": "couchdb"
+    },
+    "stdinPrefix": "couch"
+  },
+  {
     "handle": "nodemon",
     "spawn": {
       "args": [
