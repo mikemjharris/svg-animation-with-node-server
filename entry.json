@@ -1,0 +1,13 @@
+[
+  {
+    "handle": "nodemon",
+    "spawn": {
+      "args": [
+        "-w",
+        "server"
+      ],
+      "command": "nodemon"
+    },
+    "stdinPrefix": "nd"
+  }
+]

@@ -2,7 +2,7 @@
   "name": "animate-message",
   "version": "1.0.0",
   "description": "Animate a message",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,8 @@
   "author": "Mike Harris",
   "license": "ISC",
   "dependencies": {
-    "express": "~3.4.4"
+    "express": "~3.4.4",
+    "morgan": "~1.0.0",
+    "nunjucks": "~1.0.1"
   }
 }
