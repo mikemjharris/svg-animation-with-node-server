@@ -1,3 +1,4 @@
 .env
 node_modules
 client/vendor
+erl_crash.dump
