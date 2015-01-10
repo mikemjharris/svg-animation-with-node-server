@@ -23,7 +23,7 @@ app.use(express.static(__dirname+'/../client/dist/'));
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 
-var port = process.env.EXPRESS_PORT || 3000;
+var port = process.env.EXPRESS_PORT || 6000;
 var server = app.listen(port);
 
 console.log('Listening on http://127.0.0.1:' + port);
