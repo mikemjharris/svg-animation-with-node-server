@@ -1,4 +1,4 @@
-FROM dockerfile/nodejs
+FROM node:0.10-onbuild
 MAINTAINER Mike Harris "mike.harris@mammal.io"
 
 ADD package.json /tmp/package.json
@@ -10,6 +10,6 @@ ADD . /var/www/
 
 WORKDIR /var/www/
 
-CMD npm start
+CMD node ./server/server.js
 
 EXPOSE 6000

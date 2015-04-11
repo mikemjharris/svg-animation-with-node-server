@@ -1,4 +1,3 @@
-//characters as svg points
 var a = ['0 100','40 0','60 0','50 20','42 40','58 40','50 20','60 0','100 100','80 100','60 60','40 60','20 100'];
 var b= ['20 100','20 0','80 0','90 20','40 20','40 40','70 40','70 20','90 20','90 30','70 50','90 70','70 60','40 60','40 80','70 80','70 60','90 70','90 80','70 100'];
 var c = ['20 100','20 0','80 0','80 20','40 20','40 80','80 80','80 100'];
@@ -32,9 +31,15 @@ var alphabet = {
 };
 var letters = [a,a,b,b,c,c,d,d,e,e,f,f,g,g,h,h,i,i,j,j,k,k,l,l,m,m,n,n,o,o,p,p,q,q,r,r,s,s,t,t,u,u,v,v,w,w,x,x,y,y,z,z];
 
+// * at moment hard coded previous messages - to do is link into database
 var paragraph = 'It was the third of June another sleepy dusty Delta day I was out choppin cotton and my brother was balin hay And at dinner time we stopped and walked back to the house to eat And Mama hollered out the back door y all remember to wipe your feet And then she said I got some news this mornin from Choctaw Ridge  Today Billie Joe MacAllister jumped off the Tallahatchie Bridge  And Papa said to Mama as he passed around the blackeyed peas Well Billie Joe never had a lick of sense pass the biscuits please  There s five more acres in the lower forty I ve got to plow And Mama said it was shame about Billie Joe anyhow Seems like nothin ever comes to no good up on Choctaw Ridge And now Billie Joe MacAllister s jumped off the Tallahatchie Bridge And Brother said he recollected when he and Tom and Billie Joe Put a frog down my back at the Carroll County picture show And wasn t I talkin to him after church last Sunday night? I ll have another piece of apple pie you know it dont seem right I saw him at the sawmill yesterday on Choctaw Ridge  And now you tell me Billie Joe s jumped off the Tallahatchie Bridge  And Mama said to me Child what s happened to your appetite?  I ve been cookin all morning and you haven t touched a single bite  That nice young preacher Brother Taylor dropped by today  Said he d be pleased to have dinner on Sunday oh by the way  He said he saw a girl that looked a lot like you up on Choctaw Ridge  And she and Billie Joe was throwing somethin off the Tallahatchie Bridge  A year has come gone since we heard the news bout Billie Joe And Brother married Becky Thompson they bought a store in Tupelo There was a virus going round Papa caught it and he died last Spring And now Mama doesn t seem to wanna do much of anything And me I spend a lot of time pickin flowers up on Choctaw Ridge And drop them into the muddy water off the Tallahatchie Bridge';
 
 var randomSpeed = false;
+
+function shuffle(o){ 
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
 function codeAString( words ) {
   var result = '';
@@ -169,13 +174,9 @@ function init() {
   } else {
     $('#svgcontainer').empty();
     randomSpeed = true;
-    console.log( paragraph.split(' ') )
-    paragraph.split(' ').forEach(function( word , i ) {
-      // setTimeout( function() {
+    shuffle(paragraph.split(' ')).forEach(function( word , i ) {
         createMeassgeFromString(word);
-      // }, 1000 * i * Math.random() );
 
-      // createSvg(letters, '#ebebeb');
     });
 
   }
