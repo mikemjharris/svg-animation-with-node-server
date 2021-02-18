@@ -1,5 +1,5 @@
-FROM node:0.10-onbuild
-MAINTAINER Mike Harris "mike.harris@mammal.io"
+FROM node:12
+MAINTAINER Mike Harris "hello@mikemjharris.com"
 
 ADD package.json /tmp/package.json
 
@@ -10,6 +10,10 @@ ADD . /var/www/
 
 WORKDIR /var/www/
 
+RUN npm install -g bower
+RUN bower install
+RUN npm install
+
 CMD node ./server/server.js
 
-EXPOSE 6000
+EXPOSE 8000
