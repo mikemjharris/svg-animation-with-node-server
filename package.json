@@ -1,21 +1,19 @@
 {
-  "name": "animate-message",
-  "version": "1.0.0",
+  "name": "animated-message",
+  "version": "2.0.0",
   "private": true,
-  "description": "Animate a message",
-  "main": "server/server.js",
+  "type": "module",
+  "description": "Animate a message with SVG, as a static site",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.mjs",
+    "start": "node build.mjs && cd dist && python3 -m http.server 8000"
   },
-  "keywords": [
-    "svg",
-    "node"
-  ],
-  "author": "Mike Harris",
-  "license": "ISC",
   "dependencies": {
-    "express": "~3.4.4",
-    "morgan": "~1.0.0",
-    "nunjucks": "~1.0.1"
-  }
+    "jquery": "^3.7.1"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "author": "Mike Harris",
+  "license": "ISC"
 }
